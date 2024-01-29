@@ -1,10 +1,16 @@
 'use client'
 
 import React, { useState, useCallback } from 'react';
-import TokenInput from 'react-customize-token-input'
+import dynamic from 'next/dynamic';
+
+// https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading#with-no-ssr
+const TokenInput = dynamic(
+  () => import('react-customize-token-input'),
+  { ssr: false }
+);
 
 const Example = () => {
-  const [values, setValues] = useState([]);
+  const [values, setValues] = useState(['hello', 'world']);
 
   const handleTokenValuesChange = useCallback(
     (newTokenValues) => {
@@ -30,7 +36,7 @@ const Example = () => {
 export default function Home() {
   return (
     <main>
-	<Example />
+	    <Example />
     </main>
   );
 }
