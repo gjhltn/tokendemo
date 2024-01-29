@@ -19,7 +19,7 @@ const nextConfig = {
     	config,
     { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
   ) => {
-  config.output.globalObject = 'this'
+    // config.output.globalObject = 'this'
     // Important: return the modified config
     return config
   },
