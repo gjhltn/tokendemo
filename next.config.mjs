@@ -15,14 +15,6 @@ but as you can see, it doesnt fix the problem.
 
 
 const nextConfig = {
-	webpack: (
-    	config,
-    { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
-  ) => {
-  config.output.globalObject = 'this'
-    // Important: return the modified config
-    return config
-  },
 };
 
 
